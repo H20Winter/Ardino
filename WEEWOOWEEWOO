@@ -1,0 +1,22 @@
+int WEEWOOP = 13;
+int BOOP = 12;
+int AnotherWeeWoopBecauseIDontKnowWhatOtherNameICouldUseAndThisVAriableIsUnessesarilyLongIMeanWhatWasThePersonThinkingTheyCouldHaveJustNotExplainedThisAndItWouldHaveBeenALotEasierIMeanThisIsLikeAThousandLetters =
+void setup() {
+  pinMode(WEEWOOP,OUTPUT);
+  pinMode(BOOP, INPUT);
+  digitalWrite(BOOP,HIGH);
+
+}
+
+void loop() {
+  if (digitalRead(BOOP) == LOW){
+    for(int WEEWOO = 0; WEEWOO < 17; WEEWOO++){
+    digitalWrite(WEEWOOP,HIGH);
+    delay(100);
+    digitalWrite(WEEWOOP,LOW);
+    delay(94);
+    }
+  }
+  else{
+    digitalWrite(WEEWOOP,LOW);  }
+}
