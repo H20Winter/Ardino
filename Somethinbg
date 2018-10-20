@@ -1,0 +1,34 @@
+//int randNumber = random(2000000000);
+void setup() {
+ //Serial.begin(9600);
+  pinMode(13,OUTPUT);
+  tone(13, 554, 1000);
+  tone(13, 370, 1000);  
+  tone(13, 370, 1000);
+  tone(13, 49, 1000);
+  tone(13, 58, 1000);
+  tone(13, 58, 1000);
+  tone(13, 370, 1000,);
+  tone(13, 370, 1000,);
+  tone(13, 554, 1000,);
+  tone(13, 554, 1000,);
+  tone(13, 554, 1000,);
+  
+ 
+
+}
+
+void loop() {
+  
+
+
+
+
+
+
+
+  //randNumber = random (1,2000000000);
+  //Serial.println(randNumber);
+  //Serial.println("according to all known laws of aviation i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy cheese i'm not crazy i'm not crazy i'm a snek i'm not crazy i'm not a bum i'm not crazy i'm not crazy i'm not crazy i'm a homosapien i'm not crazy i'm not crazy i'm not crazy i'm not crazy chicken shamen i'm not crazy i'm not crazy i'm not crazy i'm not crazy the great coffe wizard i'm not crazy i'm not crazy i'm not crazy i'm a duck i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy i'm not crazy");
+  //delay(99);
+}
