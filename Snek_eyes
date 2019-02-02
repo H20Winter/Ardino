@@ -5,7 +5,7 @@
  */
 
 // 6 consecutive digital pins for the LEDs
-int first = 2 ;
+int first = 2;
 int second = 3;
 int third = 4;
 int fourth = 5;
@@ -31,48 +31,41 @@ pinMode(button,INPUT);
   randomSeed(analogRead(0));
 }
 
-void loop() {
-  pressed = digitalRead(button);
-  if (pressed == LOW){
+void turnOff(){
     digitalWrite(first,LOW);
     digitalWrite(second,LOW);
     digitalWrite(third,LOW);
     digitalWrite(fourth,LOW);
     digitalWrite(fifth,LOW);
     digitalWrite(sixth,LOW);
-  }
-    int var = random(2,7);
-    if (var == 2){
+}
+
+void loop() {
+  pressed = digitalRead(button);
+  if (pressed == HIGH){
+    turnOff();
+    int var = random(1,7);
+    if (var == 1){
       digitalWrite(first,HIGH);
       }
-    if (var == 3){
-      digitalWrite(first,HIGH);
+    else if (var == 2){
       digitalWrite(second,HIGH);
       }
-    if (var == 4){
-      digitalWrite(first,HIGH);
-      digitalWrite(second,HIGH);
+    else if (var == 3){
       digitalWrite(third,HIGH);
       }
-    if (var == 5){
-      digitalWrite(first,HIGH);
-      digitalWrite(second,HIGH);
-      digitalWrite(third,HIGH);
+    else if (var == 4){
       digitalWrite(fourth,HIGH);
       }
-    if (var == 6){
-      digitalWrite(first,HIGH);
-      digitalWrite(second,HIGH);
-      digitalWrite(third,HIGH);
-      digitalWrite(fourth,HIGH);
+    else if (var == 5){
       digitalWrite(fifth,HIGH);
       }
-    if (var == 7){
-      digitalWrite(first,HIGH);
-      digitalWrite(second,HIGH);
-      digitalWrite(third,HIGH);
-      digitalWrite(fourth,HIGH);
-      digitalWrite(fifth,HIGH);
+    else if (var == 6){
       digitalWrite(sixth,HIGH);
       }
+
+   
+  }
 }
+
+
