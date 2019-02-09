@@ -1,8 +1,8 @@
-/* 
- Arduino Dice :)
- This example shows how to simulate throwing a dice with 6 LEDs
- By Esther van der Stappen
- */
+/*
+  Arduino Dice :)
+  This example shows how to simulate throwing a dice with 6 LEDs
+  By Esther van der Stappen
+*/
 
 // 6 consecutive digital pins for the LEDs
 int first = 2;
@@ -19,53 +19,59 @@ int pressed = 0;
 
 void setup() {
   // set all LED pins to OUTPUT
-pinMode(first,OUTPUT);
-pinMode(second,OUTPUT);
-pinMode(third,OUTPUT);
-pinMode(fourth,OUTPUT);
-pinMode(fifth,OUTPUT);
-pinMode(sixth,OUTPUT);
+  pinMode(first, OUTPUT);
+  pinMode(second, OUTPUT);
+  pinMode(third, OUTPUT);
+  pinMode(fourth, OUTPUT);
+  pinMode(fifth, OUTPUT);
+  pinMode(sixth, OUTPUT);
   // set buttin pin to INPUT
-pinMode(button,INPUT);
+  pinMode(button, INPUT);
   // initialize random seed by noise from analog pin 0 (should be unconnected)
   randomSeed(analogRead(0));
 }
 
-void turnOff(){
-    digitalWrite(first,LOW);
-    digitalWrite(second,LOW);
-    digitalWrite(third,LOW);
-    digitalWrite(fourth,LOW);
-    digitalWrite(fifth,LOW);
-    digitalWrite(sixth,LOW);
+void turnOff() {
+  digitalWrite(first, LOW);
+  digitalWrite(second, LOW);
+  digitalWrite(third, LOW);
+  digitalWrite(fourth, LOW);
+  digitalWrite(fifth, LOW);
+  digitalWrite(sixth, LOW);
 }
 
 void loop() {
   pressed = digitalRead(button);
-  if (pressed == HIGH){
+  if (pressed == HIGH) {
     turnOff();
-    int var = random(1,7);
-    if (var == 1){
-      digitalWrite(first,HIGH);
-      }
-    else if (var == 2){
-      digitalWrite(second,HIGH);
-      }
-    else if (var == 3){
-      digitalWrite(third,HIGH);
-      }
-    else if (var == 4){
-      digitalWrite(fourth,HIGH);
-      }
-    else if (var == 5){
-      digitalWrite(fifth,HIGH);
-      }
-    else if (var == 6){
-      digitalWrite(sixth,HIGH);
-      }
+    int var = random(1, 7);
+    if (var >= 6) {
+      digitalWrite(sixth, HIGH);
+      delay(1000);
+    }
 
-   
+    else if (var >= 5) {
+      digitalWrite(fifth, HIGH);
+      delay(1000);
+    }
+
+    else if (var >= 4) {
+      digitalWrite(fourth, HIGH);
+      delay(1000);
+    }
+    else if (var >= 3) {
+      digitalWrite(third, HIGH);
+      delay(1000);
+    }
+    else if (var >= 2) {
+      digitalWrite(second, HIGH);
+      delay(1000);
+    }
+    else if (var >= 1) {
+      digitalWrite(first, HIGH);
+      delay(1000);
+    }
+
+
   }
 }
-
-
