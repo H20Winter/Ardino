@@ -1,0 +1,77 @@
+
+// 6 consecutive digital pins for the LEDs
+int first = 3;
+int second = 4;
+int third = 5;
+int fourth = 6;
+int fifth = 7;
+int sixth = 8;
+
+// pin for the button switch
+int button = 2;
+// value to check state of button switch
+int pressed = 0;
+
+void setup() {
+  // set all LED pins to OUTPUT
+  pinMode(first, OUTPUT);
+  pinMode(second, OUTPUT);
+  pinMode(third, OUTPUT);
+  pinMode(fourth, OUTPUT);
+  pinMode(fifth, OUTPUT);
+  pinMode(sixth, OUTPUT);
+  // set buttin pin to INPUT
+  pinMode(button, INPUT);
+  // initialize random seed by noise from analog pin 0 (should be unconnected)
+  randomSeed(analogRead(0));
+}
+
+void turnOff() {
+  digitalWrite(first, LOW);
+  digitalWrite(second, LOW);
+  digitalWrite(third, LOW);
+  digitalWrite(fourth, LOW);
+  digitalWrite(fifth, LOW);
+  digitalWrite(sixth, LOW);
+}
+
+void ON() {
+  digitalWrite(first, HIGH);
+  digitalWrite(second, HIGH);
+  digitalWrite(third, HIGH);
+  digitalWrite(fourth, HIGH);
+  digitalWrite(fifth, HIGH);
+  digitalWrite(sixth, HIGH);
+  }
+
+
+
+void loop() {
+  pressed = digitalRead(button);
+      digitalWrite(sixth, HIGH);
+      delay(800);
+      turnOff();
+      digitalWrite(fifth, HIGH);
+      delay(800);
+      turnOff();
+      digitalWrite(fourth, HIGH);
+      delay(800);
+      turnOff();
+      digitalWrite(third, HIGH);
+      delay(800);
+      turnOff();
+      digitalWrite(second, HIGH);
+      delay(800);
+      turnOff();
+      digitalWrite(first, HIGH);
+      delay(800);
+      turnOff();
+  if (pressed == LOW){
+    if (second == HIGH){}
+    else{}
+    
+    
+    
+    
+    }
+  }
