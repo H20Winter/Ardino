@@ -1,4 +1,5 @@
 
+
 // 6 consecutive digital pins for the LEDs
 int first = 3;
 int second = 4;
@@ -13,6 +14,7 @@ int button = 2;
 int pressed = 0;
 
 void setup() {
+  pinMode(9,OUTPUT);
   // set all LED pins to OUTPUT
   pinMode(first, OUTPUT);
   pinMode(second, OUTPUT);
@@ -49,29 +51,26 @@ void ON() {
 void loop() {
   pressed = digitalRead(button);
       digitalWrite(sixth, HIGH);
-      delay(800);
+      delay(500);
       turnOff();
       digitalWrite(fifth, HIGH);
-      delay(800);
+      delay(500);
       turnOff();
       digitalWrite(fourth, HIGH);
-      delay(800);
+      delay(500);
       turnOff();
       digitalWrite(third, HIGH);
-      delay(800);
+      delay(500);
       turnOff();
       digitalWrite(second, HIGH);
-      delay(800);
+      if (pressed == LOW){
+        tone(9,1000);
+        delay(500);
+        noTone(9);
+      }
+      delay(500);
       turnOff();
       digitalWrite(first, HIGH);
-      delay(800);
-      turnOff();
-  if (pressed == LOW){
-    if (second == HIGH){}
-    else{}
-    
-    
-    
-    
-    }
+      delay(500);
+      turnOff(); 
   }
