@@ -1,0 +1,60 @@
+#define NOTE_D4  294
+#define NOTE_E4  330
+#define NOTE_FS4 370
+#define NOTE_G4  392
+#define NOTE_A4  440
+#define NOTE_B4  494
+#define NOTE_CS5 554
+#define NOTE_D5  587
+/*
+tone(noise,294)
+tone(noise,330)
+tone(noise,370)
+tone(noise,392)
+tone(noise,440)
+tone(noise,494)
+tone(noise,554)
+tone(noise,587)
+*/
+int D4 = 9;
+int E4 = 8;
+int FS4 = 7;
+int G4 = 6;
+int A4 = 5;
+int B4 = 4;
+int CS5 = 3;
+int D5 = 2;
+int noise = 11
+
+void setup() {
+  // put your setup code here, to run once:
+for(D4 == LOW){
+  tone(noise,294)
+  }
+for(E4 == LOW){
+  tone(noise,330)
+  }
+for(FS4 == LOW){
+  tone(noise,370)
+  }
+for(G4 == LOW){
+  tone(noise,392)
+  }
+for(A4 == LOW){
+  tone(noise,440)
+  }
+if(B4 == LOW){
+  tone(noise,494)
+  }
+if(CS5 == LOW){
+  tone(noise,554)
+  }
+if(D5 == LOW){
+  tone(noise,587)
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
