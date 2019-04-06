@@ -1,60 +1,68 @@
-#define NOTE_D4  294
-#define NOTE_E4  330
-#define NOTE_FS4 370
-#define NOTE_G4  392
-#define NOTE_A4  440
-#define NOTE_B4  494
-#define NOTE_CS5 554
-#define NOTE_D5  587
 /*
-tone(noise,294)
-tone(noise,330)
-tone(noise,370)
-tone(noise,392)
-tone(noise,440)
-tone(noise,494)
-tone(noise,554)
-tone(noise,587)
+  #define NOTE_D4  294
+  #define NOTE_E4  330
+  #define NOTE_FS4 370
+  #define NOTE_G4  392
+  #define NOTE_A4  440
+  #define NOTE_B4  494
+  #define NOTE_CS5 554
+  #define NOTE_D5  587
 */
-int D4 = 9;
-int E4 = 8;
-int FS4 = 7;
-int G4 = 6;
-int A4 = 5;
-int B4 = 4;
-int CS5 = 3;
-int D5 = 2;
-int noise = 11
-
+int Auto = 9; /*Yellow*/
+int Pitchange = 8; /*Green*/
+int AD = 6; /*Red*/
+int BE = 5; /*Blue*/
+int CSFS = 4; /*Red*/
+int DDG = 3; /*Blue*/
+int noise = 11; /*Buzzer*/
+int i = 0;
+int valAD = 0;
+int valBE = 0;
+int valCSFS = 0;
+int valDDG = 0;
 void setup() {
   // put your setup code here, to run once:
-for(D4 == LOW){
-  tone(noise,294)
-  }
-for(E4 == LOW){
-  tone(noise,330)
-  }
-for(FS4 == LOW){
-  tone(noise,370)
-  }
-for(G4 == LOW){
-  tone(noise,392)
-  }
-for(A4 == LOW){
-  tone(noise,440)
-  }
-if(B4 == LOW){
-  tone(noise,494)
-  }
-if(CS5 == LOW){
-  tone(noise,554)
-  }
-if(D5 == LOW){
-  tone(noise,587)
-  }
+  pinMode(AD, INPUT);
+  pinMode(BE, INPUT);
+  pinMode(CSFS, INPUT);
+  pinMode(DDG, INPUT);
+  pinMode(noise, OUTPUT);
+  valAD = digitalRead(AD);
+  valBE = digitalRead(BE);
+  valCSFS = digitalRead(CSFS);
+  valDDG = digitalRead(DDG);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  if (Pitchange == LOW && i == 0) {
+    (i++);
+  } else if (Pitchange == LOW && i == 1) {
+    (i - 1);
+  };
+  while (valAD == HIGH && i == 1) {
+    tone(noise, 294);
+  }
+  while (valBE == HIGH && i == 1) {
+    tone(noise, 330);
+  }
+  while (valCSFS == HIGH && i == 1) {
+    tone(noise, 370);
+  }
+  while (valDDG == HIGH && i == 1) {
+    tone(noise, 392);
+  }
+  while (valAD == HIGH && i == 0) {
+    tone(noise, 440);
+  }
+  while (valBE == HIGH && i == 0) {
+    tone(noise, 494);
+  }
+  while (valCSFS == HIGH && i == 0) {
+    tone(noise, 554);
+  }
+  while (valDDG == HIGH && i == 0) {
+    tone(noise, 587);
+  }
 
-}
+};
