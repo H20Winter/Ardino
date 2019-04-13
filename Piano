@@ -10,11 +10,11 @@
 */
 int Auto = 9; /*Yellow*/
 int Pitchange = 8; /*Green*/
-int AD = 6; /*Red*/
-int BE = 5; /*Blue*/
-int CSFS = 4; /*Red*/
-int DDG = 3; /*Blue*/
-int noise = 11; /*Buzzer*/
+int AD = 6;
+int BE = 5;
+int CSFS = 4;
+int DDG = 3;
+int noise = 10;
 int i = 0;
 int valAD = 0;
 int valBE = 0;
@@ -27,42 +27,68 @@ void setup() {
   pinMode(CSFS, INPUT);
   pinMode(DDG, INPUT);
   pinMode(noise, OUTPUT);
-  valAD = digitalRead(AD);
-  valBE = digitalRead(BE);
-  valCSFS = digitalRead(CSFS);
-  valDDG = digitalRead(DDG);
+  valAD = HIGH;
+  valBE = HIGH;
+  valCSFS = HIGH;
+  valDDG = HIGH;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
+  valAD = digitalRead(AD);
+  valBE = digitalRead(BE);
+  valCSFS = digitalRead(CSFS);
+  valDDG = digitalRead(DDG);
+
   if (Pitchange == LOW && i == 0) {
     (i++);
   } else if (Pitchange == LOW && i == 1) {
     (i - 1);
   };
-  while (valAD == HIGH && i == 1) {
-    tone(noise, 294);
+  if (digitalRead(AD) == LOW && i == 1) {
+    tone(noise, 294, 1000);
+    //delay(1000);
+    //noTone(noise);
+
   }
-  while (valBE == HIGH && i == 1) {
-    tone(noise, 330);
+  if (digitalRead(BE) == LOW && i == 1) {
+    tone(noise, 330, 1000);
+    //delay(1000);
+    //noTone(noise);
   }
-  while (valCSFS == HIGH && i == 1) {
-    tone(noise, 370);
+  if (digitalRead(CSFS) == LOW && i == 1) {
+    tone(noise, 370, 1000);
+    //delay(1000);
+    //noTone(noise);
   }
-  while (valDDG == HIGH && i == 1) {
-    tone(noise, 392);
+  if (digitalRead(DDG) == LOW && i == 1) {
+    tone(noise, 392, 1000);
+    //delay(1000);
+    //noTone(noise);
   }
-  while (valAD == HIGH && i == 0) {
-    tone(noise, 440);
+  if (digitalRead(AD) == LOW && i == 0) {
+    tone(noise, 440, 1000);
+    //delay(1000);
+    //noTone(noise);
+
   }
-  while (valBE == HIGH && i == 0) {
-    tone(noise, 494);
+  if (digitalRead(BE) == LOW && i == 0) {
+    tone(noise, 494, 1000);
+    //delay(1000);
+    //noTone(noise);
   }
-  while (valCSFS == HIGH && i == 0) {
-    tone(noise, 554);
+  if (digitalRead(CSFS) == LOW && i == 0) {
+    tone(noise, 554, 1000);
+    //delay(1000);
+    //noTone(noise);
+
   }
-  while (valDDG == HIGH && i == 0) {
-    tone(noise, 587);
+  if (digitalRead(DDG) == LOW && i == 0) {
+    tone(noise, 587, 1000);
+    //delay(1000);
+    //noTone(noise);
   }
+
+
 
 };
